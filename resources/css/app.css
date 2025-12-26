@@ -1,0 +1,9 @@
+/* resources/css/app.css */
+
+/* 1. Import ditaruh PALING ATAS (Sebelum @tailwind) */
+@import './login.css';
+
+/* 2. Baru setelah itu directive Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

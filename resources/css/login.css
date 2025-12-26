@@ -1,0 +1,107 @@
+/* resources/css/login.css */
+
+/* 1. Background & Overlay */
+.login-bg-wrapper {
+    @apply fixed inset-0 z-0;
+    background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.login-overlay {
+    @apply absolute inset-0 bg-blue-900 bg-opacity-70 backdrop-blur-sm;
+}
+
+/* 2. KARTU LOGIN (Wajib Flex Column biar isinya turun ke bawah) */
+.login-card {
+    @apply relative z-10 w-full max-w-sm bg-white/95 backdrop-blur-md
+           rounded-2xl shadow-2xl p-8 mx-auto border border-white/50
+           flex flex-col gap-2; /* Tambahan gap biar ga dempet */
+}
+
+/* 3. Typography */
+.login-title {
+    @apply text-2xl font-bold text-gray-800 text-center mb-1;
+}
+
+.login-subtitle {
+    @apply text-xs text-gray-500 text-center mb-6;
+}
+
+/* 4. FORM GROUP (KUNCI PERBAIKAN) */
+/* Kita paksa Flex Column agar Label DI ATAS, Input DI BAWAH */
+.input-field-group {
+    @apply flex flex-col mb-4 w-full text-left;
+}
+
+/* Label harus block agar mengambil satu baris penuh */
+.input-label {
+    @apply block text-sm font-bold text-gray-700 mb-1.5 ml-1;
+}
+
+/* Input harus 100% width container-nya */
+.custom-input {
+    @apply w-full px-4 py-2.5 rounded-lg border border-gray-300 bg-gray-50
+           focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200
+           transition-all duration-200 outline-none text-gray-800 text-sm;
+}
+
+/* 5. TOMBOL */
+.btn-primary {
+    @apply w-full py-3 px-4 bg-blue-600 hover:bg-blue-700
+           text-white font-bold rounded-lg shadow-md hover:shadow-lg
+           transition-all transform hover:-translate-y-0.5 mt-2;
+}/* resources/css/login.css */
+
+/* 1. Background & Overlay */
+.login-bg-wrapper {
+    @apply fixed inset-0 z-0;
+    background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.login-overlay {
+    @apply absolute inset-0 bg-blue-900 bg-opacity-70 backdrop-blur-sm;
+}
+
+/* 2. KARTU LOGIN (Wajib Flex Column biar isinya turun ke bawah) */
+.login-card {
+    @apply relative z-10 w-full max-w-sm bg-white/95 backdrop-blur-md
+           rounded-2xl shadow-2xl p-8 mx-auto border border-white/50
+           flex flex-col gap-2; /* Tambahan gap biar ga dempet */
+}
+
+/* 3. Typography */
+.login-title {
+    @apply text-2xl font-bold text-gray-800 text-center mb-1;
+}
+
+.login-subtitle {
+    @apply text-xs text-gray-500 text-center mb-6;
+}
+
+/* 4. FORM GROUP (KUNCI PERBAIKAN) */
+/* Kita paksa Flex Column agar Label DI ATAS, Input DI BAWAH */
+.input-field-group {
+    @apply flex flex-col mb-4 w-full text-left;
+}
+
+/* Label harus block agar mengambil satu baris penuh */
+.input-label {
+    @apply block text-sm font-bold text-gray-700 mb-1.5 ml-1;
+}
+
+/* Input harus 100% width container-nya */
+.custom-input {
+    @apply w-full px-4 py-2.5 rounded-lg border border-gray-300 bg-gray-50
+           focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200
+           transition-all duration-200 outline-none text-gray-800 text-sm;
+}
+
+/* 5. TOMBOL */
+.btn-primary {
+    @apply w-full py-3 px-4 bg-blue-600 hover:bg-blue-700
+           text-white font-bold rounded-lg shadow-md hover:shadow-lg
+           transition-all transform hover:-translate-y-0.5 mt-2;
+}
