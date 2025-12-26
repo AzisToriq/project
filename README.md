@@ -1,59 +1,131 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Project Management System (AzisToriq/project)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Proyek ini adalah sistem manajemen berbasis web yang dibangun menggunakan **Laravel**. Aplikasi ini mendukung multi-role login untuk Admin, Siswa, dan Orang Tua.
 
-## About Laravel
+## 🚀 Fitur Utama
+- **Multi-Role Login**: Akses berbeda untuk Admin, Siswa, dan Orang Tua.
+- **Database Seeding**: Data dummy siap pakai untuk pengujian.
+- **Manajemen Data**: Pengelolaan informasi sekolah/project secara terintegrasi.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠 Panduan Instalasi (Step-by-Step)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Pastikan kamu sudah menginstal **PHP (>= 8.x)**, **Composer**, dan **MySQL/MariaDB** (bisa menggunakan XAMPP atau Laragon).
 
-## Learning Laravel
+### 1. Clone Repositori
+Buka terminal atau CMD, lalu jalankan perintah berikut:
+```bash
+git clone [https://github.com/AzisToriq/project.git](https://github.com/AzisToriq/project.git)
+cd project
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 2. Instal Dependency
 
-## Laravel Sponsors
+Instal semua library PHP yang dibutuhkan melalui Composer:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+composer install
 
-### Premium Partners
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 3. Konfigurasi Environment
 
-## Contributing
+Salin file `.env.example` menjadi `.env`:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+cp .env.example .env
 
-## Code of Conduct
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+*Jika di Windows CMD:* `copy .env.example .env`
 
-## Security Vulnerabilities
+**PENTING:** Buka file `.env` dan sesuaikan pengaturan database kamu:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nama_database_kamu  # Ganti dengan nama database yang kamu buat
+DB_USERNAME=root
+DB_PASSWORD=
 
-## License
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 4. Generate App Key
+
+```bash
+php artisan key:generate
+
+```
+
+### 5. Migrasi & Seeder (Sangat Penting)
+
+Langkah ini akan membuat tabel dan mengisi data login otomatis (Siswa & Ortu) agar kamu tidak perlu daftar manual:
+
+```bash
+php artisan migrate --seed
+
+```
+
+### 6. Jalankan Server
+
+```bash
+php artisan serve
+
+```
+
+Aplikasi sekarang bisa diakses di: [http://127.0.0.1:8000](https://www.google.com/search?q=http://127.0.0.1:8000)
+
+---
+
+## 🔐 Informasi Login (Akses Demo)
+
+Gunakan akun berikut untuk mencoba fitur berdasarkan role masing-masing:
+
+### A. Login Siswa
+
+* **URL**: `http://127.0.0.1:8000/siswa/login`
+* **Username/Email**: (Cek di UserSeeder atau gunakan email siswa yang terdaftar)
+* **Password**: `password123`
+
+### B. Login Orang Tua (Ortu)
+
+* **URL**: `http://127.0.0.1:8000/ortu/login`
+* **Username/Email**: (Cek di UserSeeder atau gunakan email ortu yang terdaftar)
+* **Password**: `orangtua123`
+
+### C. Login Admin/Umum
+
+* **URL**: `http://127.0.0.1:8000/login`
+* **Password**: (Biasanya menggunakan default `password`)
+
+---
+
+## 📂 Struktur Folder Penting
+
+* `app/Models`: Lokasi file model database.
+* `database/seeders`: Lokasi data login (Jika ingin mengubah password/user).
+* `routes/web.php`: Lokasi pengaturan URL (Siswa, Ortu, Admin).
+
+## 🆘 Troubleshooting
+
+* **Gagal Migrasi?** Pastikan database sudah dibuat di phpMyAdmin dengan nama yang sama seperti di file `.env`.
+* **Error 404 pada Login?** Pastikan kamu mengakses sub-folder yang benar (`/siswa/login` atau `/ortu/login`).
+* **Peringatan CRLF?** Itu hanya masalah format baris Windows, tidak akan merusak aplikasi.
+
+---
+
+Dibuat dengan oleh [Azis Toriq](https://www.google.com/search?q=https://github.com/AzisToriq)
+
+```
+
+***
+
+### Catatan Tambahan untuk Kamu:
+1. **Database**: Pastikan kamu sudah membuat database kosong di phpMyAdmin sebelum menjalankan `php artisan migrate --seed`.
+2. **Email Seeder**: Di bagian README "Informasi Login", kalau kamu hafal email yang kamu buat di file Seeder (misal: `siswa@gmail.com`), sebaiknya langsung tuliskan di sana agar orang yang meng-clone tidak perlu buka file code lagi.
+3. **Link Github**: Pastikan repositori kamu sudah bersifat **Public** agar orang lain bisa melakukan `git clone`.
+
+```
